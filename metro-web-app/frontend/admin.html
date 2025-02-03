@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Riyadh Metro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="menu-icon" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+            <div class="menu-dropdown">
+                <div class="menu-header">Admin: <span id="admin-name">User</span></div>
+                <div class="menu-items">
+                    <a href="#" id="logout-link">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="logo">
+            <strong>Riyadh</strong> <span>Metro</span>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Dashboard Section -->
+        <section id="home-section">
+            <h2>Admin Dashboard</h2>
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p id="total-users">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Tickets</h3>
+                    <p id="active-tickets">Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Management Section -->
+        <section id="users-section" style="display: none;">
+            <h2>User Management</h2>
+            <div class="user-list" id="user-list">
+                <!-- Users will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Ticket Management Section -->
+        <section id="tickets-section" style="display: none;">
+            <h2>Ticket Management</h2>
+            <div class="ticket-controls">
+                <button id="update-prices">Update Prices</button>
+            </div>
+            <div class="ticket-list" id="ticket-list">
+                <!-- Tickets will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Station Management Section -->
+        <section id="stations-section" style="display: none;">
+            <h2>Station Management</h2>
+            
+            <!-- Add Station Form -->
+            <div class="station-form-container">
+                <h3>Add New Station</h3>
+                <form id="add-station-form">
+                    <input type="text" id="station-name" placeholder="Station Name" required>
+                    <input type="text" id="station-location" placeholder="Location" required>
+                    <select id="station-line" required>
+                        <option value="">Select Line</option>
+                        <option value="blue">Blue Line</option>
+                        <option value="red">Red Line</option>
+                        <option value="green">Green Line</option>
+                    </select>
+                    <button type="submit">Add Station</button>
+                </form>
+            </div>
+
+            <!-- Stations List -->
+            <div class="stations-list">
+                <h3>Existing Stations</h3>
+                <div id="stations-container">
+                    <!-- Stations will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item active" id="home-link">
+            <i class="fas fa-dashboard"></i>
+            <span>Dashboard</span>
+        </div>
+        <div class="nav-item" id="users-link">
+            <i class="fas fa-users"></i>
+            <span>Users</span>
+        </div>
+        <div class="nav-item" id="tickets-link">
+            <i class="fas fa-ticket-alt"></i>
+            <span>Tickets</span>
+        </div>
+        <div class="nav-item" id="stations-link">
+            <i class="fas fa-subway"></i>
+            <span>Stations</span>
+        </div>
+    </nav>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
+<link rel="stylesheet" href="css/style.css">

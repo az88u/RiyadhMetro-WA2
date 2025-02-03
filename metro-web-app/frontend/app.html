@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="menu-icon" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+            <div class="menu-dropdown">
+                <div class="menu-header">Hi, <span id="user-name">User</span></div>
+                <div class="menu-items">
+                    <a href="#" id="logout-link">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="logo">
+            <strong>Riyadh</strong> <span>Metro</span>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home-section">
+            <!-- Search Bar -->
+            
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="destination-search" 
+                    placeholder="Search destination" 
+                    disabled
+                    list="riyadh-locations"
+                >
+                <button id="search-btn" class="search-btn" disabled>
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <!-- Main Content -->
+<main class="main-content">
+    <h2 class="journey-title">Where to go?</h2>
+    
+    <div class="route-planner">
+        <div class="route-selector">
+            <div class="select-group">
+                <select id="start-station" required>
+                    <option value="">Select Starting Station</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <select id="end-station" required>
+                    <option value="">Select Destination Station</option>
+                </select>
+            </div>
+            <button id="find-route" class="find-route-btn">
+                <i class="fas fa-search"></i>
+                Find Route
+            </button>
+        </div>
+        <div id="route-results" class="route-results"></div>
+    </div>
+</main>
+            
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+     
+                <div class="action-btn" id="admin-link" style="display: none;">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Admin</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Purchase Ticket Section -->
+<section id="purchase-section" class="ticket-section">
+    <h2>Purchase Ticket</h2>
+    
+    <div class="ticket-options">
+        <div class="ticket-card" data-type="2hours" onclick="selectTicket(this)">
+            <div class="ticket-type">2 Hours</div>
+            <div class="ticket-price">4 SAR</div>
+            <div class="ticket-details">Valid for 2 hours from activation</div>
+        </div>
+        
+        <div class="ticket-card" data-type="1day" onclick="selectTicket(this)">
+            <div class="ticket-type">Day Pass</div>
+            <div class="ticket-price">10 SAR</div>
+            <div class="ticket-details">Valid for 24 hours from activation</div>
+        </div>
+        
+        <div class="ticket-card" data-type="1month" onclick="selectTicket(this)">
+            <div class="ticket-type">Month Pass</div>
+            <div class="ticket-price">140 SAR</div>
+            <div class="ticket-details">Valid for 30 days from activation</div>
+        </div>
+    </div>
+
+    <div id="purchase-summary" class="purchase-summary" style="display: none;">
+        <h3>Selected Ticket</h3>
+        <div id="selected-ticket-info"></div>
+        <button id="confirm-purchase" class="confirm-btn">
+            <i class="fas fa-ticket"></i> Purchase Ticket
+        </button>
+    </div>
+</section>
+
+<!-- My Tickets Section -->
+<section id="tickets-section" class="ticket-section">
+    <h2>My Tickets</h2>
+    <div class="active-tickets" id="ticket-list">
+        <!-- Tickets will be added here dynamically -->
+    </div>
+</section>
+        
+        
+        <!-- Admin Section -->
+        <section id="admin-section" style="display: none;">
+            <h2>Admin Dashboard</h2>
+            <div class="admin-panels">
+                <div class="admin-panel">
+                    <h3>Users</h3>
+                    <ul id="user-list" class="admin-list"></ul>
+                </div>
+                <div class="admin-panel">
+                    <h3>All Tickets</h3>
+                    <ul id="admin-ticket-list" class="admin-list"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item active" id="home-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </div>
+        <div class="nav-item" id="map-link">
+            <i class="fas fa-map"></i>
+            <span>Map</span>
+        </div> 
+        <div class="nav-item" id="tickets-nav">
+            <i class="fas fa-ticket-alt"></i>
+            <span>Tickets</span>
+            <!-- Tickets dropdown -->
+            <div class="tickets-dropdown">
+                <a href="#" id="buy-tickets">Buy Tickets</a>
+                <a href="#" id="my-tickets">My Tickets</a>
+            </div>
+        </div>
+    </nav>
+       
+
+       
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+<link rel="stylesheet" href="css/style.css">
+
+<!-- At the bottom of body -->
+<script src="js/metroNetwork.js"></script>
+<script src="js/routePlanner.js"></script>
+<script src="script.js"></script>
+<script src="js/tickets.js"></script>

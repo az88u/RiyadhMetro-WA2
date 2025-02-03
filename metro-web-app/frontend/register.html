@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro App - Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <strong>Riyadh</strong> <span>Metro</span>
+        <div class="form-container">
+            <h2>Register</h2>
+            <form id="register-form">
+                <input type="text" id="register-username" placeholder="Username" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p class="auth-link">Already have an account? <a href="./login.html">Login here</a></p>
+        
+            <div id="error-message" style="color: red; margin-top: 10px;"></div>
+        </div>
+    </div>
+    
+    <script>
+        
+        fetch('http://localhost:5000/test')
+            .then(response => response.json())
+            .then(data => console.log('Backend connection test:', data))
+            .catch(error => {
+                console.error('Backend connection failed:', error);
+                document.getElementById('error-message').textContent = 
+                    'Cannot connect to server. Please try again later.';
+            });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+<link rel="stylesheet" href="css/style.css">
